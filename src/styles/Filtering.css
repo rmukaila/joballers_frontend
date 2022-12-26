@@ -1,0 +1,21 @@
+.Filtering-container{
+    margin-left: 10px;
+    text-align: left;
+}
+
+.Filtering-label{
+    background-color: cadetblue;
+    font-size: 20px;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.Filter-component{
+    width: 90%;
+    height: 30px;
+    font-size: 15px;
+    margin-bottom: 15px;
+}

@@ -5,9 +5,21 @@ import '../../styles/Job.css'
 const JobTitle = ()=> {
 
   return(
-  <div>
-      <button className="jobTitle">Job Tilte Here with related job terms in brackets</button>
-  </div>
+  
+    
+      <button className=" row jobTitle">
+        <div className='col-sm-4'>
+          <p>
+            Job Tilte Here with 
+          </p>
+        </div>
+
+        <div className='col-sm-8'>
+          <p>Job Tilte Here</p> 
+        </div>
+      </button>
+    
+  
   );
 }
 export default JobTitle;

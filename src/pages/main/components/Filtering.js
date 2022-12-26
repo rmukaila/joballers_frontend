@@ -1,24 +1,27 @@
 import React from "react";
+import '../../../styles/Filtering.css';
 
 
 const FiltersLabel = () =>{
     return(
-        <label>Selected filters</label>
+        <label className="Filtering-label">Selected filters</label>
     );
 }
+
 const SalaryFilter = () =>{
     return(
-        <select>
+        <select className="Filter-component">
             <option value=''>
                 Salary range here
             </option>
         </select>
     );
 }
-// const JobTitleFilter = () =>{}
+
+
 const LocationFilter = () =>{
     return(
-        <select>
+        <select className="Filter-component">
             <option>
                 All countries
             </option>
@@ -26,14 +29,16 @@ const LocationFilter = () =>{
     );
 }
 
+
+
 const Filtering = ()=>{
 
 return(
-<>
+<div className="Filtering-container">
     <FiltersLabel/>
     <LocationFilter/>
     <SalaryFilter/>
-</>
+</div>
 
 );
 

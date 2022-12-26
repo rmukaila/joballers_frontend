@@ -1,11 +1,13 @@
 .jobTitle{
 height: 130px;
+width: 100%;
 border-width: 10px;
 /* border-radius: 23px; */
 border-color: rgb(199, 83, 83);
 background-color: rgb(205, 209, 212);
 font-size: 25px;
-margin-bottom: 15px;
+margin: 15px;
+
 /* border-style: ridge; */
 }
 .jobs-container{
