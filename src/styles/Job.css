@@ -1,19 +1,30 @@
-.jobTitle{
-height: 130px;
-width: 100%;
-border-width: 10px;
-/* border-radius: 23px; */
-border-color: rgb(199, 83, 83);
-background-color: rgb(205, 209, 212);
-font-size: 25px;
-margin-bottom: 10px;
-
-padding: 3px;
-/* margin-left: 20px; */
-
-/* border-style: ridge; */
-}
 .jobs-container{
 width: 70%;
 }
 
+.jobTitle{
+height: 130px;
+width: 100%;
+border-width: px;
+border-radius: 5px;
+border-color: rgb(199, 83, 83);
+background-color: rgb(205, 209, 212);
+font-size: 25px;
+margin-top: 10px;
+margin-bottom: 0px;
+padding: 3px;
+
+
+}
+
+.dropDown{
+padding-top: 0px;
+/* border-width: 40px; */
+border-color: rgb(15, 15, 15);
+/* margin: 10px; */
+width: 100%;
+height: 100%;
+/* border-radius: 30px; */
+background-color: aqua;
+height: 80px;
+}

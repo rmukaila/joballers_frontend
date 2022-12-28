@@ -11,11 +11,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
-        
+  const onSearchSubmit = event=>{
+    event.preventDefault();
+  };
+
   
-      const onSearchSubmit = event=>{
-        event.preventDefault();
-      };
+  const jobData = [
+    {id:1,title:"Data engineer",tags:['mid','python','AWS','GCP'],description:"Must have GCP certification"},
+    {id:2,title:"Data scientist",tags:['mid','python','R'],description:"Must have GCP certification"},
+    {id:3,title:"python developer",tags:['mid','python','docker'],description:"Must have GCP certification"},
+    {id:4,title:"full-stack developer",tags:['mid','python','react'],description:"Must have GCP certification"}      
+    ]
+
+    const [jobInfo, setJobInfo] = React.useState(jobData);
+        
+    const jobComponents = jobInfo.map((item)=><JobTitle key={item.id} infoProp={item}/>)
+      
+    
     return (
       
       // <div className='container'>
@@ -39,10 +51,8 @@ function App() {
                       <Filtering/>
                     </div>
 
-                    <div className='col-sm-6 px-4'>
-                      <JobTitle/>
-                      <JobTitle/>
-                      <JobTitle/> 
+                    <div className='col-sm-6'>
+                    {jobComponents}                    
                     </div>
 
                     <div className='col-sm-3'></div>
