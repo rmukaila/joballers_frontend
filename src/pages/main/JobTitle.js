@@ -6,19 +6,21 @@ const JobTitle = ()=> {
 
   return(
   
-    
-      <button className=" row jobTitle">
-        <div className='col-sm-4'>
-          <p>
-            Job Tilte Here with 
-          </p>
-        </div>
+    <div className="row">
+        <div className='col-sm-12'>
+          <button className=" jobTitle">
+            <div className="row">
+                <div className='col-md-4'>
+                  <p>Job Tilte Here with</p>
+                </div>
 
-        <div className='col-sm-8'>
-          <p>Job Tilte Here</p> 
+                <div className='col-md-8'>
+                  <p>Job Tilte Here</p> 
+                </div>
+            </div>
+          </button>
         </div>
-      </button>
-    
+    </div>
   
   );
 }

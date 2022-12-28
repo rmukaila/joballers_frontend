@@ -35,17 +35,17 @@ function App() {
                 </p>
 
                 <div className='row'>
-                    <div className='col-md-3'>
+                    <div className='col-sm-3'>
                       <Filtering/>
                     </div>
 
-                    <div className='col-md-6'>
+                    <div className='col-sm-6 px-4'>
                       <JobTitle/>
                       <JobTitle/>
                       <JobTitle/> 
                     </div>
 
-                    <div className='col-md-3'></div>
+                    <div className='col-sm-3'></div>
                 </div>  
                        
               </div>

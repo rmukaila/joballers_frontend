@@ -6,7 +6,10 @@ border-width: 10px;
 border-color: rgb(199, 83, 83);
 background-color: rgb(205, 209, 212);
 font-size: 25px;
-margin: 15px;
+margin-bottom: 10px;
+
+padding: 3px;
+/* margin-left: 20px; */
 
 /* border-style: ridge; */
 }
