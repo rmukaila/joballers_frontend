@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import JobTitle from './JobTitle.js';
 import Filtering  from './components/Filtering.js';
@@ -15,16 +15,34 @@ function App() {
     event.preventDefault();
   };
 
-  
-  const jobData = [
-    {id:1,title:"Data engineer",tags:['mid','python','AWS','GCP'],description:"Must have GCP certification"},
-    {id:2,title:"Data scientist",tags:['mid','python','R'],description:"Must have GCP certification"},
-    {id:3,title:"python developer",tags:['mid','python','docker'],description:"Must have GCP certification"},
-    {id:4,title:"full-stack developer",tags:['mid','python','react'],description:"Must have GCP certification"}      
-    ]
+  //Mock data. this will be replace with a call to backend
+  // const jobData = [
+  //   {id:1,title:"Data engineer",tags:['mid','python','AWS','GCP'],description:"Must have GCP certification"},
+  //   {id:2,title:"Data scientist",tags:['mid','python','R'],description:"Must have GCP certification"},
+  //   {id:3,title:"python developer",tags:['mid','python','docker'],description:"Must have GCP certification"},
+  //   {id:4,title:"full-stack developer",tags:['mid','python','react'],description:"Must have GCP certification"},
+          
+  //   ]
 
-    const [jobInfo, setJobInfo] = React.useState(jobData);
-        
+
+    
+
+    const [jobInfo, setJobInfo] = React.useState([]);    
+    
+    const backend_url = "http://127.0.0.1:5000/all_job_terms"
+    
+    async function get_jobs(){
+      var respns = await fetch(backend_url)
+      var job_data = await respns.json()
+      setJobInfo(job_data.data)
+
+    }
+    
+    useEffect(()=> { 
+      get_jobs()
+
+    }, []);
+
     const jobComponents = jobInfo.map((item)=><JobTitle key={item.id} infoProp={item}/>)
       
     

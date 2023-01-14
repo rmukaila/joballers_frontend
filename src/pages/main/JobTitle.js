@@ -3,7 +3,7 @@ import '../../styles/Job.css'
 
 
 const JobTitle = (jobInfoProp)=> {
-  //Mock data. this will be replace with a call to backend
+  
   
 
   const [isOpen, setOpen] = React.useState(false);
@@ -15,14 +15,16 @@ const JobTitle = (jobInfoProp)=> {
   
     <div className="row">
         <div className='col-sm-12'>
-          <button className=" jobTitle" onClick={handleDropdown}>
+          <button className=" jobTitle" onClick={handleDropdown} >
             <div className="row">
                 <div className='col-md-4'>
                   <p>{jobInfoProp.infoProp.title}</p>
                 </div>
 
-                <div className='col-md-8'>
-                  <p>Job Tilte Here</p> 
+                <div className='col-md-8 d-flex flex-wrap'>
+                  
+                  {/* <p>Job Tilte Here</p>  */}
+                  {jobInfoProp.infoProp.tags.map((tag)=><button className="tag" key={jobInfoProp.infoProp.tags.indexOf(tag)}>{tag}</button>)}
                 </div>
             </div>
           </button>
