@@ -1621,3 +1621,13 @@ Please refer to [this section](#resolving-heroku-deployment-errors).
 ## Something Missing?
 
 If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/facebookincubator/create-react-app/issues) or [contribute some!](https://github.com/facebookincubator/create-react-app/edit/master/packages/react-scripts/template/README.md)
+
+
+########__MANUAL README__##################
+Next steps:
+
+-Change the jotitles' (e.g data engineer) color to gray and see if it will look good.
+-Add y-axis scroll bar to the list of job titles and make the rest of the page contents static
+-Change the font-family to a stylish one like sans ms
+-Add time posted, salary, location, etc to bottom right and bottom left, etc of the job post button
+-etc
