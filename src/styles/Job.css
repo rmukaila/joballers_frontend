@@ -8,8 +8,9 @@ width: 70%;
     border-width: 2px;
     border-radius: 5px;
     border-color: rgb(14, 13, 13);
-    background-color: rgb(205, 212, 205);
+    /* background-color: rgb(205, 212, 205); */
     /* background-color: aliceblue; */
+    background-color: rgb(255, 255, 255);
     font-size: 25px;
     margin-top: 10px;
     margin-bottom: 0px;
@@ -40,13 +41,16 @@ width: 70%;
 .tag{
     /* height: 40px; */
     /* width: 20%; */
-    /* border-width: 2px; */
+    border-width: 1px;
+    border-style: solid;
     border-radius: 15px;
     /* border-color: rgb(235, 140, 140); */
-    /* background-color: rgb(87, 168, 127); */
+    background-color: rgb(236, 241, 243);
     font-size: 20px;
     color: rgb(123, 118, 118);
-    /* padding: 3px; */
+    padding: 4px;
     margin: 10px;
 
 }
+
+

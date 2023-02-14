@@ -45,3 +45,16 @@
   font-weight: 12px;
 
 }
+
+.load-more{
+    border-radius: 15px;
+    width: 200px;
+    /* border-color: rgb(29, 31, 30); */
+    background-color: rgb(146, 206, 176);
+    font-size: 20px;
+    color: rgb(123, 118, 118);
+    /* padding: 3px; */
+    margin: 10px;
+  
+
+}

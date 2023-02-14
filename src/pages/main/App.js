@@ -10,10 +10,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-function App() {
-  const onSearchSubmit = event=>{
-    event.preventDefault();
-  };
+  const App = ()=> {
+  
 
   //Mock data. this will be replace with a call to backend
   // const jobData = [
@@ -25,24 +23,43 @@ function App() {
   //   ]
 
 
-    
-
+    //States and variable declarations
     const [jobInfo, setJobInfo] = React.useState([]);    
-    
+    const [query, setQuery] = useState("");
+    const [orijinalData, setOrijinalData] = useState([])    
     const backend_url = "http://127.0.0.1:5000/all_job_terms"
+
+
+
+    //Function declarations
+    const handleOnInput = (e)=>{
+      setQuery(e.target.value)
+    }
+
+    const onSearchSubmit = event=>{
+      event.preventDefault();
+      setJobInfo(search_data(orijinalData))
+    }
     
-    async function get_jobs(){
+    const get_jobs= async ()=>{
       var respns = await fetch(backend_url)
       var job_data = await respns.json()
       setJobInfo(job_data.data)
-
+      setOrijinalData(job_data.data)
+    }
+    
+    const search_data = (data)=>{
+      return query.length>0? data.filter(
+        (item)=>search_params.some((param)=>item[param].toString().toLowerCase().includes(query.toLowerCase()))
+      
+      ):data;
     }
     
     useEffect(()=> { 
       get_jobs()
-
     }, []);
 
+    const search_params = Object.keys(Object.assign({}, ...jobInfo));//Dig deeper later
     const jobComponents = jobInfo.map((item)=><JobTitle key={item.id} infoProp={item}/>)
       
     
@@ -54,9 +71,9 @@ function App() {
                 
                 <div className="App-header">
                   {/* <img src={logo} className="App-logo" alt="logo" /> */}
-                  <h2>Welcome to developer job post terms</h2>
+                  <h2>Welcome to Jobballers, freely post or find your next job</h2>
                   <form onSubmit={onSearchSubmit}>
-                    <input type='text' className='Search-bar' placeholder='Type job title' />
+                    <input type='text' className='Search-bar' placeholder='Type job title' onChange={handleOnInput}/>
                     <button type='submit' >Search</button>
                   </form>
                 </div>
@@ -70,7 +87,11 @@ function App() {
                     </div>
 
                     <div className='col-sm-6'>
-                    {jobComponents}                    
+                    
+                    {jobComponents}
+                      <div >
+                        <button className='load-more'>Load more..</button>
+                      </div>                    
                     </div>
 
                     <div className='col-sm-3'></div>

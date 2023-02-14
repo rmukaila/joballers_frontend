@@ -24,7 +24,7 @@ const JobTitle = (jobInfoProp)=> {
                 <div className='col-md-8 d-flex flex-wrap'>
                   
                   {/* <p>Job Tilte Here</p>  */}
-                  {jobInfoProp.infoProp.tags.map((tag)=><button className="tag" key={jobInfoProp.infoProp.tags.indexOf(tag)}>{tag}</button>)}
+                  {jobInfoProp.infoProp.tags.map((tag)=><label className="tag" key={jobInfoProp.infoProp.tags.indexOf(tag)}>{tag}</label>)}
                 </div>
             </div>
           </button>
