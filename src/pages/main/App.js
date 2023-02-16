@@ -27,7 +27,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
     const [jobInfo, setJobInfo] = React.useState([]);    
     const [query, setQuery] = useState("");
     const [orijinalData, setOrijinalData] = useState([])    
-    const backend_url = "http://127.0.0.1:5000/all_job_terms"
+    const backend_url = "http://0.0.0.0:10000" //"http://127.0.0.1:5000/all_job_terms"  //Change the backend url to the following render url : 4 20:35:57 +0000] [53] [INFO] Listening at: http://0.0.0.0:10000 (53)
 
 
 
@@ -71,14 +71,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
                 
                 <div className="App-header">
                   {/* <img src={logo} className="App-logo" alt="logo" /> */}
-                  <h2>Welcome to Jobballers, freely post or find your next job</h2>
+                  <h2>Welcome to Joballers, freely post or find your next job</h2>
                   <form onSubmit={onSearchSubmit}>
                     <input type='text' className='Search-bar' placeholder='Type job title' onChange={handleOnInput}/>
                     <button type='submit' >Search</button>
                   </form>
                 </div>
                 <p className="App-intro">
-                  Search results appear here.
+                  Please note that this is an ongoing project. eg: Filters are not active yet.
                 </p>
 
                 <div className='row'>

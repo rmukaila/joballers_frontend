@@ -29,6 +29,7 @@
 
 .App-intro {
   font-size: large;
+  color: red;
 }
 
 @keyframes App-logo-spin {
