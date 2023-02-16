@@ -79,7 +79,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
                   </form>
                 </div>
                 <p className="App-intro">
-                  Please note that this is an ongoing project. eg: Filters are not active yet.
+                  Note: this is an ongoing project. eg: Filters are not active yet.
                 </p>
 
                 <div className='row'>
