@@ -27,7 +27,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
     const [jobInfo, setJobInfo] = React.useState([]);    
     const [query, setQuery] = useState("");
     const [orijinalData, setOrijinalData] = useState([])    
-    const backend_url = "http://0.0.0.0:10000" //"http://127.0.0.1:5000/all_job_terms"  //Change the backend url to the following render url : 4 20:35:57 +0000] [53] [INFO] Listening at: http://0.0.0.0:10000 (53)
+    const backend_url = "https://joballers-backend.onrender.com/all_job_terms"// "http://0.0.0.0:10000" 
+    //"http://127.0.0.1:5000/all_job_terms"  //Change the backend url to the following render url : 4 20:35:57 +0000] [53] [INFO] Listening at: http://0.0.0.0:10000 (53)
 
 
 
