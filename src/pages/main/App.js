@@ -9,14 +9,14 @@ import '../../styles/App.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
+ 
   const App = ()=> {
-  
+    
+    
 
-  //Mock data. this will be replaced with a call to backend
-  const mock_jobData = [
-    {id:1,title:"Data engineer",tags:['mid','python','AWS','GCP'],description:"Must have GCP certification"},
+  //Mock data. Move this to the assets folder.
+  //Note: This data is used by the loading animation and thus should not be deleted
+  const mock_jobData = [{id:1,title:"Data engineer",tags:['mid','python','AWS','GCP'],description:"Must have GCP certification"},
     {id:2,title:"Data scientist",tags:['mid','python','R'],description:"Must have GCP certification"},
     {id:3,title:"python developer",tags:['mid','python','docker'],description:"Must have GCP certification"},
     {id:4,title:"full-stack developer",tags:['mid','python','react'],description:"Must have GCP certification"},
@@ -29,9 +29,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
     const [query, setQuery] = useState("");
     const [loaded, setLoaded] = useState(false);
     const [orijinalData, setOrijinalData] = useState([])    
-    const backend_url = "https://joballers-backend.onrender.com/all_job_terms"// "http://0.0.0.0:10000" 
-    //"http://127.0.0.1:5000/all_job_terms"  //Change the backend url to the following render url : 4 20:35:57 +0000] [53] [INFO] Listening at: http://0.0.0.0:10000 (53)
-
+    const backend_url = process.env.REACT_APP_BACKEND_URL
 
 
     //Function declarations
@@ -77,7 +75,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
                   {/* <img src={logo} className="App-logo" alt="logo" /> */}
                   <h2>Welcome to Joballers, freely post or find your next job</h2>
                   <form onSubmit={onSearchSubmit}>
-                    <input type='text' className='Search-bar' placeholder='Type job title' onChange={handleOnInput}/>
+                    <input type='text' className='Search-bar' placeholder='Type job title, description or tag' onChange={handleOnInput}/>
                     <button type='submit' >Search</button>
                   </form>
                 </div>
