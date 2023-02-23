@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
 import JobTitle from './JobTitle.js';
+import Loading_anim_job_titles from'./loading_anim_jobTitle.js';
 import Filtering  from './components/Filtering.js';
 import '../../styles/App.css';
 
@@ -13,19 +14,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
   const App = ()=> {
   
 
-  //Mock data. this will be replace with a call to backend
-  // const jobData = [
-  //   {id:1,title:"Data engineer",tags:['mid','python','AWS','GCP'],description:"Must have GCP certification"},
-  //   {id:2,title:"Data scientist",tags:['mid','python','R'],description:"Must have GCP certification"},
-  //   {id:3,title:"python developer",tags:['mid','python','docker'],description:"Must have GCP certification"},
-  //   {id:4,title:"full-stack developer",tags:['mid','python','react'],description:"Must have GCP certification"},
+  //Mock data. this will be replaced with a call to backend
+  const mock_jobData = [
+    {id:1,title:"Data engineer",tags:['mid','python','AWS','GCP'],description:"Must have GCP certification"},
+    {id:2,title:"Data scientist",tags:['mid','python','R'],description:"Must have GCP certification"},
+    {id:3,title:"python developer",tags:['mid','python','docker'],description:"Must have GCP certification"},
+    {id:4,title:"full-stack developer",tags:['mid','python','react'],description:"Must have GCP certification"},
           
-  //   ]
+    ]
 
 
     //States and variable declarations
-    const [jobInfo, setJobInfo] = React.useState([]);    
+    const [jobInfo, setJobInfo] = useState([]);    
     const [query, setQuery] = useState("");
+    const [loaded, setLoaded] = useState(false);
     const [orijinalData, setOrijinalData] = useState([])    
     const backend_url = "https://joballers-backend.onrender.com/all_job_terms"// "http://0.0.0.0:10000" 
     //"http://127.0.0.1:5000/all_job_terms"  //Change the backend url to the following render url : 4 20:35:57 +0000] [53] [INFO] Listening at: http://0.0.0.0:10000 (53)
@@ -45,6 +47,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
     const get_jobs= async ()=>{
       var respns = await fetch(backend_url)
       var job_data = await respns.json()
+      if (job_data){setLoaded(true)} else {setLoaded(false)}
       setJobInfo(job_data.data)
       setOrijinalData(job_data.data)
     }
@@ -61,7 +64,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
     }, []);
 
     const search_params = Object.keys(Object.assign({}, ...jobInfo));//Dig deeper later
-    const jobComponents = jobInfo.map((item)=><JobTitle key={item.id} infoProp={item}/>)
+    const jobComponents =loaded? jobInfo.map((item)=><JobTitle key={item.id} infoProp={item}/>): mock_jobData.map((item)=><Loading_anim_job_titles key={item.id} infoProp={item}/>);
       
     
     return (
@@ -80,6 +83,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
                 </div>
                 <p className="App-intro">
                   Note: this is an ongoing project. eg: Filters are not active yet.
+                  <br></br>
+                  Note2: Database is hosted on a separate FREE server, loading may take approx 30 scnds for first time visitors.
                 </p>
 
                 <div className='row'>
