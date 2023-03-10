@@ -23,5 +23,6 @@ RUN chown -R node /app/node_modules
 
 USER node
 
+
 # start app
 CMD ["npm", "start"]
