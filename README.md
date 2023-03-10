@@ -1,3 +1,9 @@
+## Author
+Rashid Mukaila    #All rights reserved
+
+## This project is hosted with the url: https://joballers.onrender.com/   visit the link to see the UI live!
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
